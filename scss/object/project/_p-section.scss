@@ -1,0 +1,14 @@
+/* 地図見出しの下線 */
+.p-section {
+  position: relative;
+}
+.p-section h4::after {
+  content: "";
+  display:block;
+  width:90px;
+  height:2px;
+  background-color: #707070;
+  position:absolute;
+  top: 100px;
+  left: 40px;
+}

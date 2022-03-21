@@ -1,0 +1,55 @@
+.p-section {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 0;
+  background-image: url(../img/iphone-map.jpg);
+  width: 100vw;
+  height: calc(100vw * 1.84);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media screen and (min-width: 600px) {
+    background-image: url(../img/pc-map.jpg);
+    height: calc(100vw * 0.5);
+  }
+
+  h4 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+    padding: 0 40px 50px 40px;
+  }
+}
+
+/* footer */
+.l-footer {
+  margin-top: 0;
+  padding-top: 0;
+  width: 100vw;
+  height: 200px;
+  text-align: center;
+  background-color: #9d8670;
+  .p-footer {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 50px 0 0 0;
+    li {
+      font-size: 20px;
+      color: #ffffff;
+      list-style: none;
+    }
+  }
+}
+
+.copyright {
+  padding: calc(100vw * 0.266) 0 0 0;
+  font-size: 14px;
+  color: #ffffff;
+}

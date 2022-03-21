@@ -1,0 +1,48 @@
+.c-btn__nav {
+  color: #707070;
+  font-weight: bold;
+  font-size: 20px;
+  display: block;  
+  margin: 0 0 0 auto;
+  padding: 15px 15px 0 0;
+  border: none;
+  background: transparent;
+}
+
+.c-btn__nav:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.c-sidebar__icon {
+  margin: 15px 15px 0 auto;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  position: relative;
+  span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+.c-sidebar__icon:hover {
+  cursor: pointer;
+}
+
+.c-sidebar__icon__1{
+  background-color: #707070;
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.c-sidebar__icon__2{
+  background-color: #707070;
+  top: 12px;
+  transform: rotate(-45deg);
+}

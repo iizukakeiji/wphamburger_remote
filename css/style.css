@@ -1,0 +1,981 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: Robot;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #707070;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Document
+ * ========================================================================== */
+/**
+ * Add border box sizing in all browsers (opinionated).
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+::before,
+::after {
+  text-decoration: inherit;
+  /* 1 */
+  vertical-align: inherit;
+  /* 2 */
+}
+
+/**
+ * 1. Use the default cursor in all browsers (opinionated).
+ * 2. Change the line height in all browsers (opinionated).
+ * 3. Use a 4-space tab width in all browsers (opinionated).
+ * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ * 6. Breaks words to prevent overflow in all browsers (opinionated).
+ */
+html {
+  cursor: default;
+  /* 1 */
+  line-height: 1.5;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  /* 5 */
+  -webkit-text-size-adjust: 100%;
+  /* 5 */
+  word-break: break-word;
+  /* 6 */
+}
+
+/* Sections
+ * ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+ */
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+}
+
+/**
+ * Remove the margin on nested lists in Edge 18- and IE.
+ */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+}
+
+/**
+ * 1. Add the correct sizing in Firefox.
+ * 2. Show the overflow in Edge 18- and IE.
+ */
+hr {
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * Add the correct display in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Remove the list style on navigation lists in all browsers (opinionated).
+ */
+nav ol,
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Add the correct text decoration in Edge 18-, IE, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/* Embedded content
+ * ========================================================================== */
+/*
+ * Change the alignment on media elements in all browsers (opinionated).
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on iframes in all browsers (opinionated).
+ */
+iframe {
+  border-style: none;
+}
+
+/**
+ * Remove the border on images within links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Change the fill color to match the text color in all browsers (opinionated).
+ */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Tabular data
+ * ========================================================================== */
+/**
+ * Collapse border spacing in all browsers (opinionated).
+ */
+table {
+  border-collapse: collapse;
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Remove the margin on controls in Safari.
+ */
+button,
+input,
+select {
+  margin: 0;
+}
+
+/**
+ * 1. Show the overflow in IE.
+ * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+ */
+button {
+  overflow: visible;
+  /* 1 */
+  text-transform: none;
+  /* 2 */
+}
+
+/**
+ * Correct the inability to style buttons in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 2. Correct the padding in Firefox.
+ */
+fieldset {
+  border: 1px solid #a0a0a0;
+  /* 1 */
+  padding: 0.35em 0.75em 0.625em;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in Edge 18- and IE.
+ */
+input {
+  overflow: visible;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge 18- and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ */
+legend {
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in Edge 18- and IE.
+ * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the inheritance of text transform in Firefox.
+ */
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Remove the margin in Firefox and Safari.
+ * 2. Remove the default vertical scrollbar in IE.
+ * 3. Change the resize direction in all browsers (opinionated).
+ */
+textarea {
+  margin: 0;
+  /* 1 */
+  overflow: auto;
+  /* 2 */
+  resize: vertical;
+  /* 3 */
+}
+
+/**
+ * Remove the padding in IE 10-.
+ */
+[type=checkbox],
+[type=radio] {
+  padding: 0;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+/*
+ * Add the correct display in Edge 18- and IE.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct styles in Edge 18-, IE, and Safari.
+ */
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+ * ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* User interaction
+ * ========================================================================== */
+/*
+ * 1. Remove the tapping delay in IE 10.
+ * 2. Remove the tapping delay on clickable elements
+      in all browsers (opinionated).
+ */
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  /* 1 */
+  touch-action: manipulation;
+  /* 2 */
+}
+
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Accessibility
+ * ========================================================================== */
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+[aria-disabled=true],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+[aria-hidden=false][hidden] {
+  display: initial;
+}
+
+[aria-hidden=false][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@media screen and (min-width: 600px) {
+  .l-branch-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.c-btn__nav {
+  color: #707070;
+  font-weight: bold;
+  font-size: 20px;
+  display: block;
+  margin: 0 0 0 auto;
+  padding: 15px 15px 0 0;
+  border: none;
+  background: transparent;
+}
+
+.c-btn__nav:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.c-sidebar__icon {
+  margin: 15px 15px 0 auto;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+.c-sidebar__icon span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.c-sidebar__icon:hover {
+  cursor: pointer;
+}
+
+.c-sidebar__icon__1 {
+  background-color: #707070;
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.c-sidebar__icon__2 {
+  background-color: #707070;
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+.c-header {
+  background-color: #fff7ef;
+  text-align: center;
+}
+
+.c-logo__h1 {
+  margin-top: 5px;
+}
+
+.p-search-form {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.p-search-form__submit {
+  background-color: #F2EDE9;
+  font-size: 16px;
+  margin-left: 10px;
+  width: 80px;
+  height: 45px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+}
+
+.p-search-form__submit:hover {
+  cursor: pointer;
+}
+
+.screen-reader-text {
+  display: inline-block;
+  /* なくても大丈夫 */
+  position: relative;
+  /* 基準値 */
+}
+
+.screen-reader-text::before {
+  content: "";
+  /* 疑似要素に必須 */
+  width: 24px;
+  /* アイコンの横幅 */
+  height: 24px;
+  /* アイコンの高さ */
+  background: url(../img/serchglass.png) no-repeat center center;
+  /* 背景にアイコン画像を配置 */
+  display: inline-block;
+  /* 高さを持たせるためにインラインブロック要素にする */
+  position: absolute;
+  /* 相対位置に指定 */
+  top: 12px;
+  /* アイコンの位置 */
+  left: 13px;
+  /* アイコンの位置 */
+}
+
+.p-search-form__keyword {
+  padding: 4px 10px 3px 40px;
+  /* アイコンを設置するため左の余白を多めに指定 */
+  width: 230px;
+  height: 45px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+}
+
+.p-branch-menu ul {
+  padding: 20px 20px 0 30px;
+  margin: 0 auto;
+  width: calc(100vw - 40px);
+}
+@media screen and (min-width: 600px) {
+  .p-branch-menu ul {
+    margin: 0;
+  }
+}
+.p-branch-menu ul .p-threeburgers {
+  width: 100%;
+  height: calc((100vw - 40px) * 1.9164);
+  color: #ffffff;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 600px) {
+  .p-branch-menu ul .p-threeburgers {
+    width: 48%;
+    height: calc((100vw - 40px) * 0.95);
+  }
+}
+.p-branch-menu ul .p-threeburgers h3 {
+  font-size: 41px;
+  color: #ffffff;
+  padding-left: 10px;
+  margin-top: 10px;
+  padding-top: 0;
+}
+
+.p-threeburgers {
+  background-image: url(../img/three-burgers.jpg);
+  background-size: contain;
+}
+
+/* ３バーガー画面 TakeOutの下線 */
+.p-threeburgers {
+  position: relative;
+}
+
+.p-threeburgers h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 80px;
+  left: 10px;
+}
+
+.p-potato {
+  margin-top: 10px;
+  background-image: url(../img/potato.jpg);
+  background-size: contain;
+  width: 100%;
+  height: calc((100vw - 40px) * 1.9164);
+  color: #ffffff;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+@media screen and (min-width: 600px) {
+  .p-potato {
+    width: 48%;
+    height: calc((100vw - 40px) * 0.95);
+    margin-top: 0;
+  }
+}
+.p-potato h3 {
+  font-size: 41px;
+  color: #ffffff;
+  padding-left: 10px;
+  margin-top: 10px;
+  padding-top: 0;
+}
+
+/* ポテト画面 Eat Inの下線 */
+.p-potato {
+  position: relative;
+}
+
+.p-potato h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 80px;
+  left: 10px;
+}
+
+.p-takeout dl {
+  display: inline-block;
+  width: calc(100% - 20px);
+  height: auto;
+  background-color: #ffffff;
+  opacity: 0.8;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.p-takeout dl dt {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-family: M1m;
+  font-size: 22px;
+  font-weight: bold;
+  color: #3c2a10;
+}
+.p-takeout dl dd {
+  margin: 0 10px 25px 10px;
+  font-family: M1m;
+  font-size: 16px;
+  color: #3c2a10;
+}
+
+.p-section {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 0;
+  background-image: url(../img/iphone-map.jpg);
+  width: 100vw;
+  height: 184vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media screen and (min-width: 600px) {
+  .p-section {
+    background-image: url(../img/pc-map.jpg);
+    height: 50vw;
+  }
+}
+.p-section h4 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+}
+.p-section p {
+  margin: 0;
+  font-size: 14px;
+  padding: 0 40px 50px 40px;
+}
+
+/* footer */
+.l-footer {
+  margin-top: 0;
+  padding-top: 0;
+  width: 100vw;
+  height: 200px;
+  text-align: center;
+  background-color: #9d8670;
+}
+.l-footer .p-footer {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 50px 0 0 0;
+}
+.l-footer .p-footer li {
+  font-size: 20px;
+  color: #ffffff;
+  list-style: none;
+}
+
+.copyright {
+  padding: 26.6vw 0 0 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* 地図見出しの下線 */
+.p-section {
+  position: relative;
+}
+
+.p-section h4::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 2px;
+  background-color: #707070;
+  position: absolute;
+  top: 100px;
+  left: 40px;
+}
+
+.l-main {
+  position: relative;
+}
+
+/* サイドバー登場と同時の黒い背景 */
+.c-header.panelactive::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 725vw;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+@media screen and (min-width: 600px) {
+  .c-header.panelactive::before {
+    height: 220vw;
+  }
+}
+
+.p-sidebar {
+  width: 87.5vw;
+  height: 725vw;
+  list-style: none;
+  display: block;
+  background-color: #F2EDE9;
+  position: absolute;
+  top: 0;
+  left: 100vw;
+  z-index: 101;
+  transition: all 0.6s;
+}
+@media screen and (min-width: 600px) {
+  .p-sidebar {
+    width: 45vw;
+    height: 220vw;
+  }
+}
+.p-sidebar .p-sidebar__category {
+  padding-top: 180px;
+  padding-left: 45px;
+}
+.p-sidebar h5 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.p-sidebar ul {
+  margin-top: 0;
+  padding-left: 20px;
+}
+.p-sidebar ul li {
+  list-style: none;
+  font-size: 20px;
+  line-height: 60px;
+}
+
+/* Menu クリックで左からサイドバー出現 */
+.active {
+  left: 12.5vw;
+}
+@media screen and (min-width: 600px) {
+  .active {
+    left: 55vw;
+  }
+}
+
+/*
+.l-contents {
+  position: relative;
+}
+*/
+/* 
+.u_contents-h2 { 
+  font-family: M+1m;
+  color: #ffffff;
+  font-size: 36px;
+  position: absolute;
+  left: 25px;
+  top: 80px;
+
+}
+*/
+.u_contents-h2 {
+  margin: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 76vw;
+  line-height: 76vw;
+  background-image: url("../img/iphone_damiisite.jpg");
+  background-size: contain;
+  color: #ffffff;
+  font-size: 36px;
+  padding-left: 25px;
+}
+@media screen and (min-width: 600px) {
+  .u_contents-h2 {
+    background-image: url("../img/pc_damiisite.jpg");
+    height: 35vw;
+    line-height: 35vw;
+    background-repeat: no-repeat;
+  }
+}
+/*# sourceMappingURL=style.css.map */

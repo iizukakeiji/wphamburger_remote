@@ -1,0 +1,44 @@
+.p-search-form {
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.p-search-form__submit {
+  background-color: #F2EDE9;
+  font-size: 16px;
+  margin-left: 10px;
+  width: 80px;
+  height: 45px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+}
+
+.p-search-form__submit:hover {
+  cursor: pointer;
+
+}
+
+.screen-reader-text {
+  display: inline-block; /* なくても大丈夫 */
+  position: relative;    /* 基準値 */
+}
+
+.screen-reader-text::before {
+  content: "";           /* 疑似要素に必須 */
+  width: 24px;           /* アイコンの横幅 */
+  height: 24px;          /* アイコンの高さ */
+  background: url(../img/serchglass.png) no-repeat center center ; /* 背景にアイコン画像を配置 */
+  display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
+  position: absolute;    /* 相対位置に指定 */
+  top: 12px;              /* アイコンの位置 */
+  left: 13px;             /* アイコンの位置 */
+}
+
+.p-search-form__keyword {
+  padding: 4px 10px 3px 40px; /* アイコンを設置するため左の余白を多めに指定 */
+  width: 230px;
+  height: 45px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+}
+

@@ -1,0 +1,17 @@
+.l-branch-menu ul {
+  @media screen and (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+main {
+  @media screen and (min-width: 1025px) {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1.5fr 1fr 1fr 3fr;
+    grid-template-rows: 180px 100px 80px 120px auto;
+  }
+}
+
