@@ -15,7 +15,7 @@
 }
 */
 
-
+/* 上部の「ダミーサイト」のところ */
 .u_contents-h2 {
   margin: 0;
   display: inline-block;
@@ -29,11 +29,12 @@
   padding-left: 25px;
   @media screen and (min-width: 600px) {
     background-image: url("../img/pc_damiisite.jpg");
-    height: calc(100vw * 0.35);
-    line-height: calc(100vw * 0.35);
-    background-repeat: no-repeat;
-
+    height: calc(100vw * 0.27);
+    line-height: calc(100vw * 0.27);
+    background-size: cover;
   }
-
+  @media screen and (min-width: 1025px) {
+    width: calc(100vw - 300px);
+  }
 }
 

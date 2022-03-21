@@ -557,6 +557,22 @@ textarea,
   position: absolute;
 }
 
+@media screen and (min-width: 1025px) {
+  .l-footer {
+    z-index: 1000;
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 1025px) {
+  .l-header {
+    width: calc(100vw - 300px);
+  }
+}
+
 @media screen and (min-width: 600px) {
   .l-branch-menu ul {
     display: flex;
@@ -565,6 +581,7 @@ textarea,
   }
 }
 
+/* 最上部の Menu のcss */
 .c-btn__nav {
   color: #707070;
   font-weight: bold;
@@ -581,12 +598,33 @@ textarea,
   color: blue;
 }
 
+/* PC版ではサイドバー側に移動する ！！！！！！！*/
+@media screen and (min-wdth: 1025px) {
+  .p-sidebar {
+    position: relative;
+  }
+}
+
+@media screen and (min-wdth: 1025px) {
+  .c-btn__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* サイドバーの上部の✖️のcss */
 .c-sidebar__icon {
   margin: 15px 15px 0 auto;
   width: 50px;
   height: 50px;
   box-sizing: border-box;
   position: relative;
+}
+@media screen and (min-width: 1025px) {
+  .c-sidebar__icon {
+    display: none;
+  }
 }
 .c-sidebar__icon span {
   display: block;
@@ -614,6 +652,7 @@ textarea,
   transform: rotate(-45deg);
 }
 
+/* ヘッダー */
 .c-header {
   background-color: #fff7ef;
   text-align: center;
@@ -623,6 +662,17 @@ textarea,
   margin-top: 5px;
 }
 
+/* ヘッダー PC版の並び方を左右並びに変更 */
+@media screen and (min-width: 1025px) {
+  .c-header__pcdisplay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+}
+
+/* 検索フォーム */
 .p-search-form {
   margin-top: 40px;
   padding-bottom: 40px;
@@ -642,6 +692,7 @@ textarea,
   cursor: pointer;
 }
 
+/* 検索ボックスの虫眼鏡 */
 .screen-reader-text {
   display: inline-block;
   /* なくても大丈夫 */
@@ -677,14 +728,19 @@ textarea,
   border-radius: 10px;
 }
 
+/* まん中の３バーガーとポテトの画像部分 */
 .p-branch-menu ul {
-  padding: 20px 20px 0 30px;
+  padding: 20px 20px 0 20px;
   margin: 0 auto;
-  width: calc(100vw - 40px);
 }
 @media screen and (min-width: 600px) {
   .p-branch-menu ul {
     margin: 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-branch-menu ul {
+    width: calc(100vw - 300px);
   }
 }
 .p-branch-menu ul .p-threeburgers {
@@ -702,6 +758,11 @@ textarea,
     height: calc((100vw - 40px) * 0.95);
   }
 }
+@media screen and (min-width: 1025px) {
+  .p-branch-menu ul .p-threeburgers {
+    height: calc((100vw - 40px) * 0.7);
+  }
+}
 .p-branch-menu ul .p-threeburgers h3 {
   font-size: 41px;
   color: #ffffff;
@@ -712,7 +773,7 @@ textarea,
 
 .p-threeburgers {
   background-image: url(../img/three-burgers.jpg);
-  background-size: contain;
+  background-size: cover;
 }
 
 /* ３バーガー画面 TakeOutの下線 */
@@ -731,10 +792,11 @@ textarea,
   left: 10px;
 }
 
+/* ポテトの画面 */
 .p-potato {
   margin-top: 10px;
   background-image: url(../img/potato.jpg);
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   height: calc((100vw - 40px) * 1.9164);
   color: #ffffff;
@@ -748,6 +810,11 @@ textarea,
     width: 48%;
     height: calc((100vw - 40px) * 0.95);
     margin-top: 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-potato {
+    height: calc((100vw - 40px) * 0.7);
   }
 }
 .p-potato h3 {
@@ -774,6 +841,7 @@ textarea,
   left: 10px;
 }
 
+/* TakeOut EatIn の中身 */
 .p-takeout dl {
   display: inline-block;
   width: calc(100% - 20px);
@@ -800,8 +868,10 @@ textarea,
   color: #3c2a10;
 }
 
+/* 下段の地図 */
 .p-section {
   display: block;
+  position: relative;
   margin-top: 50px;
   margin-bottom: 0;
   background-image: url(../img/iphone-map.jpg);
@@ -809,25 +879,64 @@ textarea,
   height: 184vw;
   background-repeat: no-repeat;
   background-size: contain;
+  /* 地図の中のコメント */
 }
 @media screen and (min-width: 600px) {
   .p-section {
-    background-image: url(../img/pc-map.jpg);
+    background-image: url(../img/tablet-map.jpg);
     height: 50vw;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-section {
+    background-image: url(../img/pc-map.jpg);
+    width: calc(100vw - 300px);
+    height: 30vw;
   }
 }
 .p-section h4 {
+  position: absolute;
   font-size: 30px;
+  color: #fff;
   font-weight: bold;
   margin: 0;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 40px;
+  z-index: 96;
 }
 .p-section p {
+  position: absolute;
+  color: #fff;
   margin: 0;
-  font-size: 14px;
-  padding: 0 40px 50px 40px;
+  font-size: 16px;
+  padding: 130px 40px 50px 40px;
+  z-index: 96;
+}
+@media screen and (min-width: 1025px) {
+  .p-section p {
+    width: 65%;
+  }
+}
+
+/* 地図の背景を黒く透過する */
+.p-section::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100%;
+  z-index: 95;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.3;
+}
+@media screen and (min-width: 1025px) {
+  .p-section::before {
+    width: 65%;
+  }
 }
 
 /* footer */
@@ -846,13 +955,24 @@ textarea,
   padding: 50px 0 0 0;
 }
 .l-footer .p-footer li {
+  display: block;
+  width: auto;
+  padding: 0 10px;
   font-size: 20px;
   color: #ffffff;
   list-style: none;
 }
+.l-footer .p-footer li:hover {
+  cursor: pointer;
+}
+
+.p-footer__1 {
+  border-right: 1px #ffffff solid;
+}
 
 .copyright {
-  padding: 26.6vw 0 0 0;
+  display: block;
+  margin-top: 30px;
   font-size: 14px;
   color: #ffffff;
 }
@@ -867,8 +987,9 @@ textarea,
   display: block;
   width: 90px;
   height: 2px;
-  background-color: #707070;
+  background-color: #fff;
   position: absolute;
+  z-index: 96;
   top: 100px;
   left: 40px;
 }
@@ -882,39 +1003,70 @@ textarea,
   content: "";
   position: absolute;
   width: 100vw;
-  height: 725vw;
+  height: 100%;
   z-index: 100;
   top: 0;
   left: 0;
   background-color: #000;
   opacity: 0.5;
+  -webkit-animation: animation-fadein 0.6s linear;
+          animation: animation-fadein 0.6s linear;
 }
 @media screen and (min-width: 600px) {
   .c-header.panelactive::before {
-    height: 220vw;
+    height: 100%;
   }
 }
 
+@-webkit-keyframes animation-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes animation-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+/* サイドバーのcss */
 .p-sidebar {
-  width: 87.5vw;
-  height: 725vw;
-  list-style: none;
   display: block;
-  background-color: #F2EDE9;
   position: absolute;
+  width: 87.5vw;
+  height: 700vw;
+  list-style: none;
+  background-color: #F2EDE9;
   top: 0;
   left: 100vw;
   z-index: 101;
   transition: all 0.6s;
+  /* サイドバータブレットの場合 */
+  /* サイドバーPCの場合 */
+  /* サイドバーのリスト部分 */
 }
 @media screen and (min-width: 600px) {
   .p-sidebar {
     width: 45vw;
-    height: 220vw;
+    height: 245vw;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar {
+    width: 300px;
+    height: 150vw;
+    left: auto;
+    right: 0;
   }
 }
 .p-sidebar .p-sidebar__category {
-  padding-top: 180px;
+  padding-top: 150px;
   padding-left: 45px;
 }
 .p-sidebar h5 {
@@ -958,6 +1110,7 @@ textarea,
 
 }
 */
+/* 上部の「ダミーサイト」のところ */
 .u_contents-h2 {
   margin: 0;
   display: inline-block;
@@ -973,9 +1126,14 @@ textarea,
 @media screen and (min-width: 600px) {
   .u_contents-h2 {
     background-image: url("../img/pc_damiisite.jpg");
-    height: 35vw;
-    line-height: 35vw;
-    background-repeat: no-repeat;
+    height: 27vw;
+    line-height: 27vw;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .u_contents-h2 {
+    width: calc(100vw - 300px);
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,13 @@
+body {
+  overflow-x: hidden;
+}
+
+.l-header {
+  @media screen and (min-width: 1025px) {
+    width: calc(100vw - 300px);
+  }  
+}
+
 .l-branch-menu ul {
   @media screen and (min-width: 600px) {
     display: flex;
@@ -6,12 +16,4 @@
   }
 }
 
-main {
-  @media screen and (min-width: 1025px) {
-    display: grid;
-    gap: 0;
-    grid-template-columns: 1.5fr 1fr 1fr 3fr;
-    grid-template-rows: 180px 100px 80px 120px auto;
-  }
-}
 

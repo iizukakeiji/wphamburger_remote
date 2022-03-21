@@ -1,11 +1,15 @@
+/* まん中の３バーガーとポテトの画像部分 */
 .p-branch-menu {
   ul {
-    padding: 20px 20px 0 30px;
+    padding: 20px 20px 0 20px;
     margin: 0 auto;
-    width: calc(100vw - 40px);
     @media screen and (min-width: 600px) {
       margin: 0;
-    }    
+    } 
+    @media screen and (min-width: 1025px) {
+      width: calc(100vw - 300px);
+
+    }
 
     .p-threeburgers {
       width: 100%;
@@ -17,8 +21,10 @@
       justify-content: space-between;
       @media screen and (min-width: 600px) {
         width: 48%;
-        height: calc((100vw - 40px) * 0.95);
-
+        height: calc((100vw - 40px) * 0.95) 
+      }
+      @media screen and (min-width: 1025px) {
+        height: calc((100vw - 40px) * 0.7) 
       }
       h3 {
           font-size: 41px;
@@ -33,7 +39,7 @@
 
 .p-threeburgers {
   background-image: url(../img/three-burgers.jpg);
-  background-size: contain;
+  background-size: cover;
 }
 
 /* ３バーガー画面 TakeOutの下線 */
@@ -51,11 +57,11 @@
   left:10px;
 }
 
-
+/* ポテトの画面 */
 .p-potato {
   margin-top: 10px;
   background-image: url(../img/potato.jpg);
-  background-size: contain;
+  background-size: cover;
   width: 100%;
   height: calc((100vw - 40px) * 1.9164);
   color: #ffffff;
@@ -67,7 +73,9 @@
     width: 48%;
     height: calc((100vw - 40px) * 0.95);
     margin-top: 0;
-
+  }
+  @media screen and (min-width: 1025px) {
+    height: calc((100vw - 40px) * 0.7) 
   }
   h3 {
       font-size: 41px;
@@ -94,7 +102,7 @@
   left:10px;
 }
 
-
+/* TakeOut EatIn の中身 */
 .p-takeout {
     dl {
       display: inline-block;

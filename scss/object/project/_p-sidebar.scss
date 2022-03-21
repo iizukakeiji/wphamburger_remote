@@ -7,36 +7,51 @@
   content: "";
   position: absolute;
   width: 100vw;
-  height: calc(100vw * 7.25);
+  height: 100%;
   z-index: 100;
   top: 0;
   left: 0;
   background-color: #000;
   opacity: 0.5;
+  animation: animation-fadein 0.6s linear;
   @media screen and (min-width: 600px) {
-    height: calc(100vw * 2.2);
+    height: 100%;
   }
+}
+@keyframes animation-fadein {
+  0% { opacity: 0; }
+  100% { opacity: 0.5; }
 }
 
 
+/* サイドバーのcss */
 .p-sidebar {
-  width: calc(100vw * 0.875);
-  height: calc(100vw * 7.25);  
-  list-style: none;
   display: block;
-  background-color: #F2EDE9;
   position: absolute;
+  width: calc(100vw * 0.875);
+  height: calc(100vw * 7);
+  list-style: none;
+  background-color: #F2EDE9;
   top: 0;
   left: 100vw;
   z-index: 101;
   transition: all 0.6s;
+
+/* サイドバータブレットの場合 */
   @media screen and (min-width: 600px) {
     width: calc(100vw * 0.45);
-    height: calc(100vw * 2.2);    
+    height: calc(100vw * 2.45);
   }
-
+/* サイドバーPCの場合 */
+  @media screen and (min-width: 1025px) {
+    width: 300px;
+    height: calc(100vw * 1.5);
+    left: auto;
+    right: 0;
+  }
+/* サイドバーのリスト部分 */
   .p-sidebar__category {
-    padding-top: 180px;
+    padding-top: 150px;
     padding-left: 45px;
   }
   h5 {
@@ -56,11 +71,10 @@
 }
 
 /* Menu クリックで左からサイドバー出現 */
-.active{
+.active {
   left: calc(100vw * 0.125);
   @media screen and (min-width: 600px) {
     left: calc(100vw * 0.55);
   }  
 }
-
 

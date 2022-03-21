@@ -1,3 +1,4 @@
+/* 検索フォーム */
 .p-search-form {
   margin-top: 40px;
   padding-bottom: 40px;
@@ -15,14 +16,13 @@
 
 .p-search-form__submit:hover {
   cursor: pointer;
-
 }
 
+/* 検索ボックスの虫眼鏡 */
 .screen-reader-text {
   display: inline-block; /* なくても大丈夫 */
   position: relative;    /* 基準値 */
 }
-
 .screen-reader-text::before {
   content: "";           /* 疑似要素に必須 */
   width: 24px;           /* アイコンの横幅 */
