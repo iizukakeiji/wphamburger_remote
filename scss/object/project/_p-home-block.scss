@@ -132,4 +132,22 @@
   } 
 }
 
+/* ---------------------------------------------
+     single ページ
+  ----------------------------------------------*/
+/* テーブルブロックの装飾 */
+  .p-tableblock {
+    margin: 20px;
+    th,td {
+      height: 70px;
+      font-weight: 100;
+      border: solid 1px;
+    }
+    th {
+      width: 130px;
+    }
+    td {
+      width: calc(100vw - 113px);
+    }
+}
 

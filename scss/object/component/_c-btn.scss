@@ -1,45 +1,54 @@
-/* 最上部の Menu のcss */
+/* 最上部のMenuがあるブロック全体のcss */
+.c-btn__gridlayout {
+  display: block;
+  background-color: #fff7ef;
+  @media screen and (min-width: 1025px) {
+    background-color: #F2EDE9;
+  }
+}
+
+/* 最上部の Menuのボタン css */
 .c-btn__nav {
   color: #707070;
   font-weight: bold;
   font-size: 20px;
   display: block;  
-  margin: 0 0 0 auto;
+  margin: 0 0 0 auto;             // 0 0 0 auto から変更（右に寄りすぎるので）
   padding: 15px 15px 0 0;
   border: none;
   background: transparent;
+  @media screen and (min-width: 600px) {
+    @media screen and (min-width: 1025px) {
+      font-size: 30px;
+      margin: 0 0 0 45px;             
+      padding: 90px 0 0 0;
+    }
+  }  
 }
 .c-btn__nav:hover {
   cursor: pointer;
   color: blue;
-}
-
-/* PC版ではサイドバー側に移動する ！！！！！！！*/
-.p-sidebar {
-  @media screen and (min-wdth:1025px) {
-    position: relative;
+  @media screen and (min-width: 1025px) {
+    cursor: auto;
+    color: #707070;
   }
-}
-.c-btn__nav {
-  @media screen and (min-wdth:1025px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }  
 }
 
 
 /* サイドバーの上部の✖️のcss */
 .c-sidebar__icon {
-  margin: 15px 15px 0 auto;
+  margin: 15px 15px 0 calc((100vw * 0.875) - 65px);          // 15px 15px 0 auto から変更（右に寄りすぎるので）
   width: 50px;
   height: 50px;
   box-sizing: border-box;
   position: relative;
-  @media screen and (min-width:1025px) {
-    display: none;
+  @media screen and (min-width: 600px) {
+    margin: 15px 15px 0 calc((100vw * 0.45) - 65px);
+    @media screen and (min-width:1025px) {
+      display: none;
+    }
   }
-  span {
+  span {                   /* ここから✖️印にするcss */
     display: block;
     width: 30px;
     height: 2px;
@@ -53,15 +62,80 @@
 .c-sidebar__icon:hover {
   cursor: pointer;
 }
-
 .c-sidebar__icon__1{
   background-color: #707070;
   top: 12px;
   transform: rotate(45deg);
 }
-
 .c-sidebar__icon__2{
   background-color: #707070;
   top: 12px;
   transform: rotate(-45deg);
+}                                      /* ✖️印のcss ここまで */
+
+
+/* --------------------
+   archiveページ  
+  --------------------*/
+/* 「詳しく見る」ボタン */
+.c-btn__archive {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 50px auto 20px auto;
+  color: #707070;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.c-btn__archive:hover{
+  cursor: pointer;
+}
+
+/* --- ページネーション --- */
+.p-pagenation__page {
+  margin-top: 40px;  
+}
+.p-pagenation__list {
+  font-size: 15px;
+}
+
+.p-pagenation__btn span {
+  color: #3C2A10;
+  @media screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
+
+/* ---------------------------------------
+      single ページ
+  ----------------------------------------*/
+/* 画面最下部のボタン */
+.c-btn__single {
+  margin: 20px;
+  button {
+    width: 100%;
+    height: 100px;
+    background-color: #F2EDE9;
+    border: 1px solid;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    &:hover {
+      cursor: pointer;
+    }
+  @media screen and (min-width: 600px) {
+    width: 550px;
+    }
+  }
+}
+
+/* bold のところ */
+.c-boldtext {
+  margin: 20px 20px 200px 20px;
+  font-weight: bold;
+  color: #3C2A10;  
+
 }

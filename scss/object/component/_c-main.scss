@@ -17,3 +17,88 @@
     padding: 0 30px;
   }  
 }
+
+/* ------------------
+    archiveページ
+  ------------------- */
+  /* 影付きのハンバーガー画像のところ */
+.c-smallheading__archive {
+  padding: 20px 20px 0 20px;
+  h3 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+/* ------------------
+    single ページ
+  ------------------- */
+  /* まん中のチーズバーガー写真 */
+  .c-cheezburger__midlesnap {
+    display: block;
+    width: calc(100vw - 50px);
+    height: calc((100vw - 50px) * 0.35);
+    margin: 0 auto;
+    padding: 0;
+    object-fit: cover;
+    object-position: 0 100%;
+    @media screen and (min-width: 1025px) {
+      padding: 0 20px;
+    }
+  }
+
+  /* チーズバーガーの小さい写真とコメントを並列に記載するところ */
+  .c-cheezburger__smallsnap {
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 0 20px;              // 間隔を gap で指定
+    img {
+      margin: 0 0 auto 0;
+      width: 38vw;
+      object-fit: contain;
+    }
+    p {
+      margin: 0;
+    }
+  }
+
+/* 下の横長まん中に配置の部分 */
+.c-cheezburger__rargesnap {
+  display: block;
+  width: 70vw;
+  height: 40vw;
+  margin: 0 auto;
+  @media screen and (min-width: 1025px) {
+    width: 45vw;
+    height: 25vw;  
+  }
+}
+
+/* リストリストの部分 */
+.c-listview__single {
+  display: inline-block;
+  margin: 40px 0 40px 80px;
+  ul li {
+    list-style: none;
+    text-indent: -1.5em;
+  }
+}
+.c-listview__first__single,.c-listview__second__single {
+  margin-left: 1em;  
+}
+.c-textindent {
+  margin-left: -1em;
+  text-indent: 0em;
+}
+
+
+
+/* html〜要素を表示するところ */
+.c-alphavetview__single {
+  margin: 10px 20px;
+  background-color: #F5F5F5;
+}
+

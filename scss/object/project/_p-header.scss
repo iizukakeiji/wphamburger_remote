@@ -1,7 +1,11 @@
 /* 検索フォーム */
 .p-search-form {
-  margin-top: 40px;
+  margin-top: 10px;
   padding-bottom: 40px;
+  @media screen and (min-width: 1025px) {
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .p-search-form__submit {
@@ -13,10 +17,24 @@
   border: 1px solid #707070;
   border-radius: 10px;
 }
-
 .p-search-form__submit:hover {
   cursor: pointer;
 }
+
+.c-logo__h1 {
+  margin-bottom: 15px;         /* Humbergar と 検索ボックスの行間の調整 */
+  @media screen and (min-width: 1025px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.c-header__pcdisplay {
+  @media screen and (min-width: 1025px) {
+    margin-top: 70px;
+  }
+}
+
 
 /* 検索ボックスの虫眼鏡 */
 .screen-reader-text {

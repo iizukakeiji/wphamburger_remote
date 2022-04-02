@@ -567,6 +567,11 @@ body {
   overflow-x: hidden;
 }
 
+.body-active {
+  /* ここを追加した */
+  position: fixed;
+}
+
 @media screen and (min-width: 1025px) {
   .l-header {
     width: calc(100vw - 300px);
@@ -581,7 +586,18 @@ body {
   }
 }
 
-/* 最上部の Menu のcss */
+/* 最上部のMenuがあるブロック全体のcss */
+.c-btn__gridlayout {
+  display: block;
+  background-color: #fff7ef;
+}
+@media screen and (min-width: 1025px) {
+  .c-btn__gridlayout {
+    background-color: #F2EDE9;
+  }
+}
+
+/* 最上部の Menuのボタン css */
 .c-btn__nav {
   color: #707070;
   font-weight: bold;
@@ -592,41 +608,45 @@ body {
   border: none;
   background: transparent;
 }
+@media screen and (min-width: 600px) and (min-width: 1025px) {
+  .c-btn__nav {
+    font-size: 30px;
+    margin: 0 0 0 45px;
+    padding: 90px 0 0 0;
+  }
+}
 
 .c-btn__nav:hover {
   cursor: pointer;
   color: blue;
 }
-
-/* PC版ではサイドバー側に移動する ！！！！！！！*/
-@media screen and (min-wdth: 1025px) {
-  .p-sidebar {
-    position: relative;
-  }
-}
-
-@media screen and (min-wdth: 1025px) {
-  .c-btn__nav {
-    position: absolute;
-    top: 0;
-    left: 0;
+@media screen and (min-width: 1025px) {
+  .c-btn__nav:hover {
+    cursor: auto;
+    color: #707070;
   }
 }
 
 /* サイドバーの上部の✖️のcss */
 .c-sidebar__icon {
-  margin: 15px 15px 0 auto;
+  margin: 15px 15px 0 calc(87.5vw - 65px);
   width: 50px;
   height: 50px;
   box-sizing: border-box;
   position: relative;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 600px) {
+  .c-sidebar__icon {
+    margin: 15px 15px 0 calc(45vw - 65px);
+  }
+}
+@media screen and (min-width: 600px) and (min-width: 1025px) {
   .c-sidebar__icon {
     display: none;
   }
 }
 .c-sidebar__icon span {
+  /* ここから✖️印にするcss */
   display: block;
   width: 30px;
   height: 2px;
@@ -652,6 +672,134 @@ body {
   transform: rotate(-45deg);
 }
 
+/* ✖️印のcss ここまで */
+/* --------------------
+   archiveページ  
+  --------------------*/
+/* 「詳しく見る」ボタン */
+.c-btn__archive {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 50px auto 20px auto;
+  color: #707070;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.c-btn__archive:hover {
+  cursor: pointer;
+}
+
+/* --- ページネーション --- */
+.p-pagenation__page {
+  margin-top: 40px;
+}
+
+.p-pagenation__list {
+  font-size: 15px;
+}
+
+.p-pagenation__btn span {
+  color: #3C2A10;
+}
+@media screen and (min-width: 600px) {
+  .p-pagenation__btn span {
+    display: none;
+  }
+}
+
+/* ---------------------------------------
+      single ページ
+  ----------------------------------------*/
+/* 画面最下部のボタン */
+.c-btn__single {
+  margin: 20px;
+}
+.c-btn__single button {
+  width: 100%;
+  height: 100px;
+  background-color: #F2EDE9;
+  border: 1px solid;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.c-btn__single button:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  .c-btn__single button {
+    width: 550px;
+  }
+}
+
+/* bold のところ */
+.c-boldtext {
+  margin: 20px 20px 200px 20px;
+  font-weight: bold;
+  color: #3C2A10;
+}
+
+.c-gridlayout__outside {
+  display: grid;
+  grid-template-columns: 100vw 300px;
+  grid-template-rows: 50px 160px auto 200px;
+}
+@media screen and (min-width: 1025px) {
+  .c-gridlayout__outside {
+    grid-template-columns: calc(100vw - 300px) 300px;
+  }
+}
+
+.c-btn__gridlayout {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+@media screen and (min-width: 1025px) {
+  .c-btn__gridlayout {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+}
+
+.c-header {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+@media screen and (min-width: 1025px) {
+  .c-header {
+    grid-row: 1/3;
+  }
+}
+
+.c-gridlayout__main__index {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.c-footer__gridlayout {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+@media screen and (min-width: 1025px) {
+  .c-footer__gridlayout {
+    grid-column: 1/3;
+  }
+}
+
+.c-sidebar__gridlayout {
+  grid-column: 2/3;
+  grid-row: 1/5;
+}
+@media screen and (min-width: 1025px) {
+  .c-sidebar__gridlayout {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+}
+
 /* ヘッダー */
 .c-header {
   background-color: #fff7ef;
@@ -672,10 +820,107 @@ body {
   }
 }
 
+/* ------------------
+    archiveページ
+  ------------------- */
+/* 影付きのハンバーガー画像のところ */
+.c-smallheading__archive {
+  padding: 20px 20px 0 20px;
+}
+.c-smallheading__archive h3 {
+  font-size: 30px;
+}
+.c-smallheading__archive p {
+  font-size: 20px;
+}
+
+/* ------------------
+    single ページ
+  ------------------- */
+/* まん中のチーズバーガー写真 */
+.c-cheezburger__midlesnap {
+  display: block;
+  width: calc(100vw - 50px);
+  height: calc((100vw - 50px) * 0.35);
+  margin: 0 auto;
+  padding: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 100%;
+     object-position: 0 100%;
+}
+@media screen and (min-width: 1025px) {
+  .c-cheezburger__midlesnap {
+    padding: 0 20px;
+  }
+}
+
+/* チーズバーガーの小さい写真とコメントを並列に記載するところ */
+.c-cheezburger__smallsnap {
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 0 20px;
+}
+.c-cheezburger__smallsnap img {
+  margin: 0 0 auto 0;
+  width: 38vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.c-cheezburger__smallsnap p {
+  margin: 0;
+}
+
+/* 下の横長まん中に配置の部分 */
+.c-cheezburger__rargesnap {
+  display: block;
+  width: 70vw;
+  height: 40vw;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1025px) {
+  .c-cheezburger__rargesnap {
+    width: 45vw;
+    height: 25vw;
+  }
+}
+
+/* リストリストの部分 */
+.c-listview__single {
+  display: inline-block;
+  margin: 40px 0 40px 80px;
+}
+.c-listview__single ul li {
+  list-style: none;
+  text-indent: -1.5em;
+}
+
+.c-listview__first__single, .c-listview__second__single {
+  margin-left: 1em;
+}
+
+.c-textindent {
+  margin-left: -1em;
+  text-indent: 0em;
+}
+
+/* html〜要素を表示するところ */
+.c-alphavetview__single {
+  margin: 10px 20px;
+  background-color: #F5F5F5;
+}
+
 /* 検索フォーム */
 .p-search-form {
-  margin-top: 40px;
+  margin-top: 10px;
   padding-bottom: 40px;
+}
+@media screen and (min-width: 1025px) {
+  .p-search-form {
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .p-search-form__submit {
@@ -690,6 +935,23 @@ body {
 
 .p-search-form__submit:hover {
   cursor: pointer;
+}
+
+.c-logo__h1 {
+  margin-bottom: 15px;
+  /* Humbergar と 検索ボックスの行間の調整 */
+}
+@media screen and (min-width: 1025px) {
+  .c-logo__h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .c-header__pcdisplay {
+    margin-top: 70px;
+  }
 }
 
 /* 検索ボックスの虫眼鏡 */
@@ -868,7 +1130,29 @@ body {
   color: #3c2a10;
 }
 
-/* 下段の地図 */
+/* ---------------------------------------------
+     single ページ
+  ----------------------------------------------*/
+/* テーブルブロックの装飾 */
+.p-tableblock {
+  margin: 20px;
+}
+.p-tableblock th, .p-tableblock td {
+  height: 70px;
+  font-weight: 100;
+  border: solid 1px;
+}
+.p-tableblock th {
+  width: 130px;
+}
+.p-tableblock td {
+  width: calc(100vw - 113px);
+}
+
+/* -------------------------------------
+     index
+   ------------------------------------- */
+/* ページ最下段の地図 */
 .p-section {
   display: block;
   position: relative;
@@ -878,7 +1162,7 @@ body {
   width: 100vw;
   height: 184vw;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   /* 地図の中のコメント */
 }
 @media screen and (min-width: 600px) {
@@ -939,7 +1223,10 @@ body {
   }
 }
 
-/* footer */
+/* ---------------------------------------
+     全ページ共通のフッター
+  ---------------------------------------- */
+/* --- footer --- */
 .l-footer {
   margin-top: 0;
   padding-top: 0;
@@ -977,6 +1264,137 @@ body {
   color: #ffffff;
 }
 
+/* ------------------
+   archiveページ 
+  ------------------*/
+/* バーガーの写真と小見出しのブロック */
+/*
+.p-burgerlist__archive {           // これは１つのブロックの指定（自動調整される）
+  ul {
+  margin: 0 20px 20px 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  li {              // 個々のリスト
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+    background-color: #3C2B1C;
+//    border: 0px red solid;   //
+    color: #fff;
+    @media screen and (min-width: 600px) {
+      width: calc((100vw - 40px) / 2);
+      height: calc((100vw - 40px) * 0.45);
+      background-position: center;
+      @media screen and (min-width: 1025px) {
+        width: calc((100vw - 340px) / 2);
+        height: calc((100vw - 340px) * 0.37);  
+      }
+    }
+    h4 {
+      margin: 9% 0;         // margin: 30px 0;
+      font-size: 30px;        // font-size: 30px;
+      @media screen and (min-width: 600px) {
+
+      }
+    }
+    h5 {
+      margin: 0;
+      font-size: 22px;     // 22px
+      @media screen and (min-width: 600px) {
+      }
+    }
+    p {
+      font-size: 15px;
+      @media screen and (min-width: 600px) {
+        font-size: 2vw;
+        @media screen and (min-width: 1025px) {
+          font-size: 1.3vw;
+        }
+      }
+    }
+    }
+  }
+}
+
+.p-burgerlist__foto__archive {
+  display: block;
+  width: 100%;
+  height: calc((100vw - 40px) * 0.7 );
+  background-image: url(../img/burgersnap.jpg);
+  background-size: cover;
+  @media screen and (min-width: 1025px) {
+  }
+}
+*/
+.p-burgerlist__archive {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin: 20px;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__archive {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.p-burgerlist__foto__archive {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__foto__archive {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+
+.p-burgerlist__text__archive {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: #3C2B1C;
+  color: #ffffff;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__text__archive {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}
+.p-burgerlist__text__archive h4 {
+  margin: 20px 0 20px 20px;
+  font-size: 30px;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__text__archive h4 {
+    font-size: 22px;
+  }
+}
+.p-burgerlist__text__archive h5 {
+  margin: 0 0 0 20px;
+  font-size: 22px;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__text__archive h5 {
+    font-size: 18px;
+  }
+}
+.p-burgerlist__text__archive p {
+  margin: 5px 20px 0 20px;
+  font-size: 15px;
+}
+
 /* 地図見出しの下線 */
 .p-section {
   position: relative;
@@ -994,6 +1412,94 @@ body {
   left: 40px;
 }
 
+/* -------------------------- 
+    archiveページ 
+----------------------------*/
+/* ページネーション */
+.p-pagenation {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
+.p-pagenation .p-pagenation__page {
+  display: none;
+  height: 50px;
+  line-height: 50px;
+}
+@media screen and (min-width: 600px) {
+  .p-pagenation .p-pagenation__page {
+    display: block;
+  }
+}
+
+.p-pagenation__list ul {
+  width: 100vw;
+  padding: 0 30px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 600px) {
+  .p-pagenation__list ul {
+    width: 100%;
+    padding: 30px;
+  }
+}
+.p-pagenation__list ul .p-pagenation__btn {
+  display: inline;
+  list-style: none;
+  padding: 5px 10px;
+}
+.p-pagenation__list ul .p-pagenation__number {
+  display: block;
+  list-style: none;
+  padding: 5px 10px;
+  border: 1px #ccc solid;
+  display: none;
+  cursor: pointer;
+}
+.p-pagenation__list ul .p-pagenation__number:active {
+  background-color: #3C2B1C;
+  color: #fff;
+}
+@media screen and (min-width: 600px) {
+  .p-pagenation__list ul .p-pagenation__number {
+    display: block;
+    margin: 0 5px;
+  }
+}
+
+/* -----------------------
+  singleページ
+  ------------------------*/
+.p-paragraph__single {
+  margin: 30px 25px;
+  color: #3C2A10;
+  /* Blockquote 引用タグ */
+}
+.p-paragraph__single h3 {
+  font-size: 30px;
+}
+.p-paragraph__single h4 {
+  font-size: 25px;
+}
+.p-paragraph__single h5 {
+  font-size: 20px;
+}
+.p-paragraph__single blockquote {
+  margin: 0;
+  padding: 20px 20px;
+  background-color: #F5F5F5;
+}
+
+/* ９バーガーグリッドレイアウト */
+.p-cheezburger__9grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 20px;
+}
+
 .l-main {
   position: relative;
 }
@@ -1003,7 +1509,7 @@ body {
   content: "";
   position: absolute;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   z-index: 100;
   top: 0;
   left: 0;
@@ -1038,29 +1544,16 @@ body {
 /* サイドバーのcss */
 .p-sidebar {
   display: block;
-  position: absolute;
-  width: 87.5vw;
-  height: 700vw;
   list-style: none;
   background-color: #F2EDE9;
-  top: 0;
-  left: 100vw;
-  z-index: 101;
+  z-index: 1001;
   transition: all 0.6s;
   /* サイドバータブレットの場合 */
   /* サイドバーPCの場合 */
   /* サイドバーのリスト部分 */
 }
-@media screen and (min-width: 600px) {
-  .p-sidebar {
-    width: 45vw;
-    height: 245vw;
-  }
-}
 @media screen and (min-width: 1025px) {
   .p-sidebar {
-    width: 300px;
-    height: 150vw;
     left: auto;
     right: 0;
   }
@@ -1068,11 +1561,17 @@ body {
 .p-sidebar .p-sidebar__category {
   padding-top: 150px;
   padding-left: 45px;
+  /* PC版は トップ 0 にする*/
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar .p-sidebar__category {
+    padding-top: 0;
+  }
 }
 .p-sidebar h5 {
   font-size: 24px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 0;
 }
 .p-sidebar ul {
   margin-top: 0;
@@ -1085,31 +1584,29 @@ body {
 }
 
 /* Menu クリックで左からサイドバー出現 */
+/*
 .active {
-  left: 12.5vw;
+  left: calc(100vw * 0.125);
+  @media screen and (min-width: 600px) {
+    left: calc(100vw * 0.55);
+  }  
+}
+*/
+/* グリッド用に変更後 */
+.active {
+  margin-left: -87.5vw;
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 @media screen and (min-width: 600px) {
   .active {
-    left: 55vw;
+    margin-left: -45vw;
   }
 }
 
-/*
-.l-contents {
-  position: relative;
-}
-*/
-/* 
-.u_contents-h2 { 
-  font-family: M+1m;
-  color: #ffffff;
-  font-size: 36px;
-  position: absolute;
-  left: 25px;
-  top: 80px;
-
-}
-*/
+/* ------------------------------------
+      index
+   ------------------------------------ */
 /* 上部の「ダミーサイト」のところ */
 .u_contents-h2 {
   margin: 0;
@@ -1135,5 +1632,158 @@ body {
   .u_contents-h2 {
     width: calc(100vw - 300px);
   }
+}
+
+/*------------------------------------------ 
+   archive.page の部分
+  ----------------------------------------- */
+/* Menu チーズバーガーの部分 */
+.c-contents__archive {
+  margin: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 76vw;
+  line-height: 76vw;
+  background-image: url("../img/arvhive_burger.jpg");
+  background-size: cover;
+  color: #ffffff;
+  font-size: 36px;
+  padding-left: 25px;
+  position: relative;
+}
+@media screen and (min-width: 600px) {
+  .c-contents__archive {
+    background-image: url("../img/archive_headerburger.jpg");
+    height: 27vw;
+    line-height: 27vw;
+    background-size: cover;
+    background-position: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-contents__archive {
+    width: calc(100vw - 300px);
+  }
+}
+
+.c-contents__block__archive h2 {
+  margin: 0;
+  font-size: 36px;
+  padding-left: 25px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 296;
+}
+@media screen and (min-width: 600px) {
+  .c-contents__block__archive h2 {
+    left: 60px;
+    font-size: 45px;
+  }
+}
+.c-contents__block__archive p {
+  margin: 0;
+  font-size: 20px;
+  padding: 50px 0 0 25px;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  z-index: 296;
+}
+@media screen and (min-width: 600px) {
+  .c-contents__block__archive p {
+    padding: 5px 0 0 220px;
+  }
+}
+
+.c-contents__p__archiveseach {
+  left: 70px;
+}
+
+/* Menu チーズバーガーの影の部分 */
+.c-contents__archive::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 295;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+.c-contents__h2__archiveseach .c-contents__single {
+  margin: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 60vw;
+  line-height: 60vw;
+  background-image: url("../img/cheezburger_fot_header.jpg");
+  background-size: cover;
+}
+@media screen and (min-width: 1025px) {
+  .c-contents__h2__archiveseach .c-contents__single {
+    background-image: url("../img/cheezburger_fot_pcheader.jpg");
+    width: calc(100vw - 300px);
+    height: calc((100vw - 300px) * 0.33);
+    line-height: calc((100vw - 300px) * 0.33);
+  }
+}
+
+.c-contents__single {
+  margin: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 60vw;
+  line-height: 60vw;
+  background-image: url("../img/cheezburger_fot_header.jpg");
+  background-size: cover;
+}
+@media screen and (min-width: 1025px) {
+  .c-contents__single {
+    background-image: url("../img/cheezburger_fot_pcheader.jpg");
+    width: calc(100vw - 300px);
+    height: calc((100vw - 300px) * 0.33);
+    line-height: calc((100vw - 300px) * 0.33);
+  }
+}
+
+.c-contents__block__single h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 45px;
+  padding-left: 25px;
+  color: #ffffff;
+}
+
+/*--------------------------- 
+   page の部分
+---------------------------- */
+.c-contents__page {
+  margin: 0;
+  display: inline-block;
+  width: 100vw;
+  height: 60vw;
+  line-height: 60vw;
+  background-image: url("../img/iphone_shop_photo.jpg");
+  background-size: cover;
+  color: #ffffff;
+}
+@media screen and (min-width: 1025px) {
+  .c-contents__page {
+    background-image: url("../img/pc_shop_photo.jpg");
+    width: calc(100vw - 300px);
+    height: calc((100vw - 300px) * 0.33);
+    line-height: calc((100vw - 300px) * 0.33);
+  }
+}
+
+.c-contents__block__page h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 45px;
+  padding-left: 25px;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */

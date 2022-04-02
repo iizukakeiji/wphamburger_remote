@@ -1,8 +1,11 @@
 $(function() {
 
+if(window.matchMedia("(max-width:1024px)").matches) {     //タブレット以下のみ動作させる
+
 //Menu クリックでサイドバー登場
   $(".c-btn__nav").on("click",function() {
     $(".p-sidebar").toggleClass("active");
+    $("body").toggleClass("body-active");
   });
 
 //Menu クリックで黒い背景登場
@@ -10,20 +13,20 @@ $(function() {
     $(".c-header").toggleClass("panelactive");
   });
 
-
 //メニューバー側の閉じる動き
   $(".c-sidebar__icon").on("click",function() {
     $(".p-sidebar").toggleClass("active");
+    $("body").toggleClass("body-active");
   });
 //✖️ボタン クリックで黒い背景隠す
   $(".c-sidebar__icon").on("click",function() {
     $(".c-header").toggleClass("panelactive");
   });
+  
+};
 
-  //  ハンバーガーメニュー✖️がクリックされるたびにopenというクラスを付け外しする　擬似要素
-$('.menu-icon').on("click",function() {
-$('.menu-icon, .bar1, .bar2, .bar3').toggleClass('open');
-});
-
+// index画面 地図の高さの調整 pの高さを取得して代入         // 全画面共通
+  var h_wrap = $(".p-section p").outerHeight(true);
+    $('.p-section').css('height',h_wrap + 'px');
 
 });

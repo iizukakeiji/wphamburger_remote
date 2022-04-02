@@ -1,4 +1,7 @@
-/* 下段の地図 */
+/* -------------------------------------
+     index
+   ------------------------------------- */
+/* ページ最下段の地図 */
 .p-section {
   display: block;
   position: relative;
@@ -8,7 +11,7 @@
   width: 100vw;
   height: calc(100vw * 1.84);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;          // cover に変更
 //スマホ版
   @media screen and (min-width: 600px) {
     background-image: url(../img/tablet-map.jpg);
@@ -63,7 +66,10 @@
   }
 }
 
-/* footer */
+/* ---------------------------------------
+     全ページ共通のフッター
+  ---------------------------------------- */
+/* --- footer --- */
 .l-footer {
   margin-top: 0;
   padding-top: 0;
@@ -93,10 +99,132 @@
   border-right: 1px #ffffff solid;
 }
 
-
 .copyright {
   display: block;
   margin-top: 30px;
   font-size: 14px;
   color: #ffffff;
+}
+
+
+/* ------------------
+   archiveページ 
+  ------------------*/
+/* バーガーの写真と小見出しのブロック */
+/*
+.p-burgerlist__archive {           // これは１つのブロックの指定（自動調整される）
+  ul {
+  margin: 0 20px 20px 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  li {              // 個々のリスト
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0 20px;
+    list-style: none;
+    background-color: #3C2B1C;
+//    border: 0px red solid;   //
+    color: #fff;
+    @media screen and (min-width: 600px) {
+      width: calc((100vw - 40px) / 2);
+      height: calc((100vw - 40px) * 0.45);
+      background-position: center;
+      @media screen and (min-width: 1025px) {
+        width: calc((100vw - 340px) / 2);
+        height: calc((100vw - 340px) * 0.37);  
+      }
+    }
+    h4 {
+      margin: 9% 0;         // margin: 30px 0;
+      font-size: 30px;        // font-size: 30px;
+      @media screen and (min-width: 600px) {
+
+      }
+    }
+    h5 {
+      margin: 0;
+      font-size: 22px;     // 22px
+      @media screen and (min-width: 600px) {
+      }
+    }
+    p {
+      font-size: 15px;
+      @media screen and (min-width: 600px) {
+        font-size: 2vw;
+        @media screen and (min-width: 1025px) {
+          font-size: 1.3vw;
+        }
+      }
+    }
+    }
+  }
+}
+
+.p-burgerlist__foto__archive {
+  display: block;
+  width: 100%;
+  height: calc((100vw - 40px) * 0.7 );
+  background-image: url(../img/burgersnap.jpg);
+  background-size: cover;
+  @media screen and (min-width: 1025px) {
+  }
+}
+*/
+
+.p-burgerlist__archive {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin: 20px;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+.p-burgerlist__foto__archive {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 100%;
+  height: auto;
+  @media screen and (min-width: 600px) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+
+.p-burgerlist__text__archive {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: #3C2B1C;
+  color: #ffffff;
+  @media screen and (min-width: 600px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  h4 {
+    margin: 20px 0 20px 20px;         // margin: 30px 0;
+    font-size: 30px;        // font-size: 30px;
+    @media screen and (min-width: 600px) {
+      font-size: 22px;
+    }
+  }
+  h5 {
+    margin: 0 0 0 20px;
+    font-size: 22px;     // 22px
+    @media screen and (min-width: 600px) {
+      font-size: 18px;
+    }
+  }
+  p {
+    margin: 5px 20px 0 20px;
+    font-size: 15px;
+  }
 }

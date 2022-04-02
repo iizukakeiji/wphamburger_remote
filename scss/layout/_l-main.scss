@@ -1,6 +1,9 @@
 body {
   overflow-x: hidden;
 }
+.body-active {             /* ここを追加した */
+  position: fixed;
+}
 
 .l-header {
   @media screen and (min-width: 1025px) {

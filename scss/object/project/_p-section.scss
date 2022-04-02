@@ -13,3 +13,93 @@
   top: 100px;
   left: 40px;
 }
+
+
+/* -------------------------- 
+    archiveページ 
+----------------------------*/
+/* ページネーション */
+.p-pagenation {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  .p-pagenation__page {    //page 1/10 のところ
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+}
+  .p-pagenation__list {
+    ul {
+    width: 100vw;
+    padding: 0 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (min-width: 600px) {
+      width: 100%;
+      padding: 30px;
+    }
+    .p-pagenation__btn {
+      display: inline;
+      list-style: none;
+      padding: 5px 10px;
+
+    }
+    .p-pagenation__number {
+      display: block;
+      list-style: none;
+      padding: 5px 10px;
+      border: 1px #ccc solid;
+      display: none;
+      cursor: pointer;
+      &:active {
+        background-color: #3C2B1C;
+        color: #fff;
+      }
+      @media screen and (min-width: 600px) {
+        display: block;
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+
+/* -----------------------
+  singleページ
+  ------------------------*/
+// h2 h3 段落の部分
+.p-paragraph__single {
+  margin: 30px 25px;
+  color: #3C2A10;
+  h3 {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  
+/* Blockquote 引用タグ */
+  blockquote {
+    margin: 0;
+    padding: 20px 20px;
+    background-color: #F5F5F5;
+  }
+}
+
+
+/* ９バーガーグリッドレイアウト */
+.p-cheezburger__9grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 20px;
+}
+
