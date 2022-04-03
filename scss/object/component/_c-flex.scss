@@ -1,15 +1,18 @@
+@use "../../foundation/base" as base;
+
+
 .c-gridlayout__outside {
   display: grid;
   grid-template-columns: 100vw 300px;
   grid-template-rows: 50px 160px auto 200px;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {               // @media screen and (min-width: 1025px)
     grid-template-columns: calc(100vw - 300px) 300px;
   }
 }
 .c-btn__gridlayout {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
     grid-column: 2 / 3;
     grid-row: 1 / 3;
   }
@@ -17,27 +20,27 @@
 .c-header {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
     grid-row: 1 / 3;
   }
 }
 .c-gridlayout__main__index {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
   }
 }
 .c-footer__gridlayout {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
     grid-column: 1 / 3;
   }
 }
 .c-sidebar__gridlayout {
   grid-column: 2 / 3;
   grid-row: 1 / 5;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }

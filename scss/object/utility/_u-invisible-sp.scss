@@ -1,3 +1,6 @@
+@use "../../foundation/base" as base;
+
+
 /* ------------------------------------
       index
    ------------------------------------ */
@@ -13,13 +16,13 @@
   color: #ffffff;
   font-size: 36px;
   padding-left: 25px;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                    // @media screen and (min-width: 600px)
     background-image: url("../img/pc_damiisite.jpg");
     height: calc(100vw * 0.27);
     line-height: calc(100vw * 0.27);
     background-size: cover;
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                    // @media screen and (min-width: 1025px)
     width: calc(100vw - 300px);
   }
 }
@@ -40,14 +43,14 @@
   font-size: 36px;
   padding-left: 25px;
   position: relative;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                       // @media screen and (min-width: 600px)
     background-image: url("../img/archive_headerburger.jpg");  //PC版は画像を入れ替え
     height: calc(100vw * 0.27);
     line-height: calc(100vw * 0.27);
     background-size: cover;
     background-position: center;
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                       // @media screen and (min-width: 1025px)
     width: calc(100vw - 300px);
   }
 }
@@ -61,7 +64,7 @@
     position: absolute;
     top: 0;
     z-index: 296;
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {              // @media screen and (min-width: 600px)
       left: 60px;
       font-size: 45px;
     }
@@ -74,7 +77,7 @@
     position: absolute;
     top: 0;
     z-index: 296;
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {              // @media screen and (min-width: 600px)
       padding: 5px 0 0 220px;
     }
   }
@@ -97,12 +100,12 @@
   left: 0;
   background-color: #000;
   opacity: 0.5;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                // @media screen and (min-width: 1025px)
 
   }
 }
 
-.c-contents__h2__archiveseach
+//.c-contents__h2__archiveseach
 
 
 /*--------------------------- 
@@ -117,9 +120,9 @@
   line-height: calc(100vw * 0.6);
   background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                             // @media screen and (min-width: 600px)
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                             // @media screen and (min-width: 1025px)
     background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
@@ -135,9 +138,9 @@
   line-height: calc(100vw * 0.6);
   background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                             // @media screen and (min-width: 600px)
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                             // @media screen and (min-width: 1025px)
     background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
@@ -169,9 +172,9 @@
   background-image: url("../img/iphone_shop_photo.jpg");
   background-size: cover;
   color: #ffffff;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                  // @media screen and (min-width: 600px)
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                  // @media screen and (min-width: 1025px)
     background-image: url("../img/pc_shop_photo.jpg");    //PC版は画像を入れ替え
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);

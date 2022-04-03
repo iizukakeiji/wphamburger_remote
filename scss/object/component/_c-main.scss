@@ -1,3 +1,6 @@
+@use "../../foundation/base" as base;
+
+
 /* ヘッダー */
 .c-header {
   background-color: #fff7ef;
@@ -10,7 +13,7 @@
 
 /* ヘッダー PC版の並び方を左右並びに変更 */
 .c-header__pcdisplay {
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {       // @media screen and (min-width: 1025px)
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,7 +47,7 @@
     padding: 0;
     object-fit: cover;
     object-position: 0 100%;
-    @media screen and (min-width: 1025px) {
+    @include base.mq(pc) {         // @media screen and (min-width: 1025px)
       padding: 0 20px;
     }
   }
@@ -71,7 +74,7 @@
   width: 70vw;
   height: 40vw;
   margin: 0 auto;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {         // @media screen and (min-width: 1025px)
     width: 45vw;
     height: 25vw;  
   }

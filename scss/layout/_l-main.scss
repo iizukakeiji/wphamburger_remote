@@ -1,3 +1,5 @@
+@use "../foundation/base" as base;
+
 body {
   overflow-x: hidden;
 }
@@ -6,13 +8,13 @@ body {
 }
 
 .l-header {
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {           // @media screen and (min-width: 1025px)
     width: calc(100vw - 300px);
   }  
 }
 
 .l-branch-menu ul {
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {         // @media screen and (min-width: 600px)
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -1,5 +1,7 @@
+@use "../foundation/base" as base;
+
 .l-footer {
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {      // @media screen and (min-width: 1025px)
     z-index: 1000;
   }
 }

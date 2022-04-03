@@ -17,3 +17,18 @@ a {
 img {
   max-width: 100%;
 }
+
+
+/* ------------------------------------------
+      ブレークポイントの mixin 定義
+  ------------------------------------------- */
+$breakpoints: (
+  'tb': 'screen and (min-width: 600px)',
+  'pc': 'screen and (min-width: 1025px)',
+) !default;
+
+@mixin mq($breakpoint: tb) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

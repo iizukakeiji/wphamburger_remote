@@ -1,15 +1,41 @@
+@use "../../foundation/base" as base;
+
+
 /* まん中の３バーガーとポテトの画像部分 */
 .p-branch-menu {
   ul {
-    padding: 20px 20px 0 20px;
-    margin: 0 auto;
-    @media screen and (min-width: 600px) {
-      margin: 0;
+    padding: 0;                  // 変更前 padding: 20px 20px 0 20px;
+    margin: 30px;              // margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    gap: 30px;
+    @include base.mq(tb) {                 // @media screen and (min-width: 600px)
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      margin: 50px;
+      gap: 50px;
     } 
-    @media screen and (min-width: 1025px) {
-      width: calc(100vw - 300px);
-
+    @include base.mq(pc) {                // @media screen and (min-width: 1025px)
     }
+// グリッド用の記述を追加
+.p-threeburgers {
+  grid-column: 1 /2;
+  grid-row: 1 / 2;
+  @include base.mq(tb) {                  // @media screen and (min-width: 600px)
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}
+.p-potato {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  @include base.mq(tb) {                  // @media screen and (min-width: 600px)
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }  
+}
 
     .p-threeburgers {
       width: 100%;
@@ -19,11 +45,11 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      @media screen and (min-width: 600px) {
-        width: 48%;
+      @include base.mq(tb) {                  // @media screen and (min-width: 600px)
+        width: 100%;    // 48%
         height: calc((100vw - 40px) * 0.95) 
       }
-      @media screen and (min-width: 1025px) {
+      @include base.mq(pc) {                  // @media screen and (min-width: 1025px)
         height: calc((100vw - 40px) * 0.7) 
       }
       h3 {
@@ -59,22 +85,22 @@
 
 /* ポテトの画面 */
 .p-potato {
-  margin-top: 10px;
-  background-image: url(../img/potato.jpg);
-  background-size: cover;
+//  margin-top: 10px;
   width: 100%;
   height: calc((100vw - 40px) * 1.9164);
+  background-image: url(../img/potato.jpg);
+  background-size: cover;
   color: #ffffff;
   list-style: none;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  @media screen and (min-width: 600px) {
-    width: 48%;
+  @include base.mq(tb) {                       // @media screen and (min-width: 600px)
+    width: 100%;       // 48%
     height: calc((100vw - 40px) * 0.95);
     margin-top: 0;
   }
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                       // @media screen and (min-width: 1025px)
     height: calc((100vw - 40px) * 0.7) 
   }
   h3 {

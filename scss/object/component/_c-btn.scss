@@ -1,8 +1,11 @@
+@use "../../foundation/base" as base;
+
+
 /* 最上部のMenuがあるブロック全体のcss */
 .c-btn__gridlayout {
   display: block;
   background-color: #fff7ef;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {              // @media screen and (min-width: 1025px)
     background-color: #F2EDE9;
   }
 }
@@ -17,8 +20,8 @@
   padding: 15px 15px 0 0;
   border: none;
   background: transparent;
-  @media screen and (min-width: 600px) {
-    @media screen and (min-width: 1025px) {
+  @include base.mq(tb) {              // @media screen and (min-width: 600px)
+    @include base.mq(pc) {            // @media screen and (min-width: 1025px)
       font-size: 30px;
       margin: 0 0 0 45px;             
       padding: 90px 0 0 0;
@@ -28,7 +31,7 @@
 .c-btn__nav:hover {
   cursor: pointer;
   color: blue;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {        // @media screen and (min-width: 1025px)
     cursor: auto;
     color: #707070;
   }
@@ -42,9 +45,9 @@
   height: 50px;
   box-sizing: border-box;
   position: relative;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                                      // @media screen and (min-width: 600px)
     margin: 15px 15px 0 calc((100vw * 0.45) - 65px);
-    @media screen and (min-width:1025px) {
+    @include base.mq(pc) {                                    // @media screen and (min-width:1025px)
       display: none;
     }
   }
@@ -92,6 +95,13 @@
 .c-btn__archive:hover{
   cursor: pointer;
 }
+.p-burgerlist__text__archive {
+  a {
+    text-decoration: none;
+    color: #707070;
+  }
+}
+
 
 /* --- ページネーション --- */
 .p-pagenation__page {
@@ -103,7 +113,7 @@
 
 .p-pagenation__btn span {
   color: #3C2A10;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
     display: none;
   }
 }
@@ -126,7 +136,7 @@
     &:hover {
       cursor: pointer;
     }
-  @media screen and (min-width: 600px) {
+    @include base.mq(tb) {         // @media screen and (min-width: 600px)
     width: 550px;
     }
   }

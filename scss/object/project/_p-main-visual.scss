@@ -1,3 +1,6 @@
+@use "../../foundation/base" as base;
+
+
 /* -------------------------------------
      index
    ------------------------------------- */
@@ -12,14 +15,14 @@
   height: calc(100vw * 1.84);
   background-repeat: no-repeat;
   background-size: cover;          // cover に変更
-//スマホ版
-  @media screen and (min-width: 600px) {
+//タブレット版
+  @include base.mq(tb) {                                // @media screen and (min-width: 600px)
     background-image: url(../img/tablet-map.jpg);
     height: calc(100vw * 0.5);
     background-size: cover;
   }
 //PC版
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                                 // @media screen and (min-width: 1025px)
     background-image: url(../img/pc-map.jpg);
     width: calc(100vw - 300px);
     height: calc(100vw * 0.3);
@@ -43,7 +46,7 @@
     font-size: 16px;
     padding: 130px 40px 50px 40px;
     z-index: 96;
-    @media screen and (min-width: 1025px) {
+    @include base.mq(pc) {                 // @media screen and (min-width: 1025px)
       width: 65%;
     }
   }
@@ -61,7 +64,7 @@
   left: 0;
   background-color: #000;
   opacity: 0.3;
-  @media screen and (min-width: 1025px) {
+  @include base.mq(pc) {                   // @media screen and (min-width: 1025px)
     width: 65%;
   }
 }
@@ -105,11 +108,17 @@
   font-size: 14px;
   color: #ffffff;
 }
+.p-footer {
+  a {
+    text-decoration: none;           // ショップの色を白に
+    color: #ffffff;
+  }
+}
 
 
-/* ------------------
+/* ---------------------------------------
    archiveページ 
-  ------------------*/
+  ----------------------------------------*/
 /* バーガーの写真と小見出しのブロック */
 /*
 .p-burgerlist__archive {           // これは１つのブロックの指定（自動調整される）
@@ -183,7 +192,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   margin: 20px;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                  // @media screen and (min-width: 600px)
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
@@ -194,9 +203,12 @@
   grid-row: 1 / 2;
   width: 100%;
   height: auto;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                  // @media screen and (min-width: 600px)
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 100%;
   }
 }
 
@@ -205,21 +217,21 @@
   grid-row: 2 / 3;
   background-color: #3C2B1C;
   color: #ffffff;
-  @media screen and (min-width: 600px) {
+  @include base.mq(tb) {                   // @media screen and (min-width: 600px)
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
   h4 {
     margin: 20px 0 20px 20px;         // margin: 30px 0;
     font-size: 30px;        // font-size: 30px;
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {                 // @media screen and (min-width: 600px)
       font-size: 22px;
     }
   }
   h5 {
     margin: 0 0 0 20px;
     font-size: 22px;     // 22px
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {                 // @media screen and (min-width: 600px)
       font-size: 18px;
     }
   }

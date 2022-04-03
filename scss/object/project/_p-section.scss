@@ -1,3 +1,6 @@
+@use "../../foundation/base" as base;
+
+
 /* 地図見出しの下線 */
 .p-section {
   position: relative;
@@ -27,7 +30,7 @@
     display: none;
     height: 50px;
     line-height: 50px;
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {             // @media screen and (min-width: 600px)
       display: block;
     }
   }
@@ -39,7 +42,7 @@
     text-align: center;
     display: flex;
     justify-content: space-between;
-    @media screen and (min-width: 600px) {
+    @include base.mq(tb) {             // @media screen and (min-width: 600px)
       width: 100%;
       padding: 30px;
     }
@@ -60,7 +63,7 @@
         background-color: #3C2B1C;
         color: #fff;
       }
-      @media screen and (min-width: 600px) {
+      @include base.mq(tb) {            // @media screen and (min-width: 600px)
         display: block;
         margin: 0 5px;
       }

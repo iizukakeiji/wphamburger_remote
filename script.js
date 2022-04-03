@@ -29,4 +29,20 @@ if(window.matchMedia("(max-width:1024px)").matches) {     //タブレット以�
   var h_wrap = $(".p-section p").outerHeight(true);
     $('.p-section').css('height',h_wrap + 'px');
 
+// リサイズ時にリロード
+  var timer = 0;
+  var currentWidth = window.innerWidth;
+	$(window).resize(function(){
+      if (currentWidth == window.innerWidth) {
+          return;
+      }
+      if (timer > 0) {
+          clearTimeout(timer);
+      }
+ 
+      timer = setTimeout(function () {
+          location.reload();
+      }, 200);		
+	});
+
 });

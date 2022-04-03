@@ -19,6 +19,9 @@ img {
   max-width: 100%;
 }
 
+/* ------------------------------------------
+      ブレークポイントの mixin 定義
+  ------------------------------------------- */
 /* Document
  * ========================================================================== */
 /**
@@ -693,6 +696,11 @@ body {
   cursor: pointer;
 }
 
+.p-burgerlist__text__archive a {
+  text-decoration: none;
+  color: #707070;
+}
+
 /* --- ページネーション --- */
 .p-pagenation__page {
   margin-top: 40px;
@@ -953,6 +961,10 @@ body {
     margin-top: 70px;
   }
 }
+.c-header__pcdisplay a {
+  text-decoration: none;
+  color: #707070;
+}
 
 /* 検索ボックスの虫眼鏡 */
 .screen-reader-text {
@@ -992,17 +1004,40 @@ body {
 
 /* まん中の３バーガーとポテトの画像部分 */
 .p-branch-menu ul {
-  padding: 20px 20px 0 20px;
-  margin: 0 auto;
+  padding: 0;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: 30px;
 }
 @media screen and (min-width: 600px) {
   .p-branch-menu ul {
-    margin: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 50px;
+    gap: 50px;
   }
 }
-@media screen and (min-width: 1025px) {
-  .p-branch-menu ul {
-    width: calc(100vw - 300px);
+.p-branch-menu ul .p-threeburgers {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+@media screen and (min-width: 600px) {
+  .p-branch-menu ul .p-threeburgers {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+}
+.p-branch-menu ul .p-potato {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+@media screen and (min-width: 600px) {
+  .p-branch-menu ul .p-potato {
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
 }
 .p-branch-menu ul .p-threeburgers {
@@ -1016,7 +1051,7 @@ body {
 }
 @media screen and (min-width: 600px) {
   .p-branch-menu ul .p-threeburgers {
-    width: 48%;
+    width: 100%;
     height: calc((100vw - 40px) * 0.95);
   }
 }
@@ -1056,11 +1091,10 @@ body {
 
 /* ポテトの画面 */
 .p-potato {
-  margin-top: 10px;
-  background-image: url(../img/potato.jpg);
-  background-size: cover;
   width: 100%;
   height: calc((100vw - 40px) * 1.9164);
+  background-image: url(../img/potato.jpg);
+  background-size: cover;
   color: #ffffff;
   list-style: none;
   display: flex;
@@ -1069,7 +1103,7 @@ body {
 }
 @media screen and (min-width: 600px) {
   .p-potato {
-    width: 48%;
+    width: 100%;
     height: calc((100vw - 40px) * 0.95);
     margin-top: 0;
   }
@@ -1264,9 +1298,14 @@ body {
   color: #ffffff;
 }
 
-/* ------------------
+.p-footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ---------------------------------------
    archiveページ 
-  ------------------*/
+  ----------------------------------------*/
 /* バーガーの写真と小見出しのブロック */
 /*
 .p-burgerlist__archive {           // これは１つのブロックの指定（自動調整される）
@@ -1357,6 +1396,11 @@ body {
   .p-burgerlist__foto__archive {
     grid-column: 1/2;
     grid-row: 1/2;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0% 100%;
+       object-position: 0% 100%;
   }
 }
 
@@ -1498,6 +1542,15 @@ body {
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 20px;
+}
+
+.p-sidebar h5 a {
+  text-decoration: none;
+  color: #707070;
+}
+.p-sidebar ul li a {
+  text-decoration: none;
+  color: #707070;
 }
 
 .l-main {
@@ -1713,7 +1766,10 @@ body {
   background-color: #000;
   opacity: 0.5;
 }
-.c-contents__h2__archiveseach .c-contents__single {
+/*--------------------------- 
+   single の部分
+---------------------------- */
+.c-contents__single {
   margin: 0;
   display: inline-block;
   width: 100vw;
@@ -1723,7 +1779,7 @@ body {
   background-size: cover;
 }
 @media screen and (min-width: 1025px) {
-  .c-contents__h2__archiveseach .c-contents__single {
+  .c-contents__single {
     background-image: url("../img/cheezburger_fot_pcheader.jpg");
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
