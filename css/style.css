@@ -632,7 +632,7 @@ body {
 
 /* サイドバーの上部の✖️のcss */
 .c-sidebar__icon {
-  margin: 15px 15px 0 calc(87.5vw - 65px);
+  margin: 50px 15px 0 calc(87.5vw - 65px);
   width: 50px;
   height: 50px;
   box-sizing: border-box;
@@ -640,7 +640,7 @@ body {
 }
 @media screen and (min-width: 600px) {
   .c-sidebar__icon {
-    margin: 15px 15px 0 calc(45vw - 65px);
+    margin: 25px 15px 0 calc(45vw - 65px);
   }
 }
 @media screen and (min-width: 600px) and (min-width: 1025px) {
@@ -1000,6 +1000,26 @@ body {
   height: 45px;
   border: 1px solid #707070;
   border-radius: 10px;
+}
+
+/*-----------------------------------------------------------------
+   WordPress用の虫眼鏡の配置
+  -----------------------------------------------------------------*/
+.p-search-form {
+  display: inline-block;
+  /* なくても大丈夫 */
+  position: relative;
+  /* 基準値 */
+}
+
+.searchglass {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 13px;
+  /* アイコンの位置 */
+  left: 15px;
+  /* アイコンの位置 */
 }
 
 /* まん中の３バーガーとポテトの画像部分 */
@@ -1404,6 +1424,25 @@ body {
   }
 }
 
+.p-burgerlist__archive img {
+  /* wordpress吐き出し対応にした!!! */
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 600px) {
+  .p-burgerlist__archive img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%;
+  }
+}
+
 .p-burgerlist__text__archive {
   grid-column: 1/2;
   grid-row: 2/3;
@@ -1460,56 +1499,164 @@ body {
     archiveページ 
 ----------------------------*/
 /* ページネーション */
+/*
 .p-pagenation {
   display: flex;
   justify-content: center;
   font-size: 13px;
+  .p-pagenation__page {    //page 1/10 のところ
+    display: none;
+    height: 50px;
+    line-height: 50px;
+    @include base.mq(tb) {             // @media screen and (min-width: 600px)
+      display: block;
+    }
+  }
 }
-.p-pagenation .p-pagenation__page {
-  display: none;
-  height: 50px;
-  line-height: 50px;
+  .p-pagenation__list {
+    ul {
+    width: 100vw;
+    padding: 0 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    @include base.mq(tb) {             // @media screen and (min-width: 600px)
+      width: 100%;
+      padding: 30px;
+    }
+    .p-pagenation__btn {
+      display: inline;
+      list-style: none;
+      padding: 5px 10px;
+
+    }
+    .p-pagenation__number {
+      display: block;
+      list-style: none;
+      padding: 5px 10px;
+      border: 1px #ccc solid;
+      display: none;
+      cursor: pointer;
+      &:active {
+        background-color: #3C2B1C;
+        color: #fff;
+      }
+      @include base.mq(tb) {            // @media screen and (min-width: 600px)
+        display: block;
+        margin: 0 5px;
+      }
+    }
+  }
+}*/
+/*-----------------------------------------------
+   WordPress用のページネーションの調整
+  -----------------------------------------------*/
+.p-pagenation__wplist {
+  margin: 0 25px 0 25px;
+  width: 90%;
+  text-align: right;
 }
 @media screen and (min-width: 600px) {
-  .p-pagenation .p-pagenation__page {
-    display: block;
+  .p-pagenation__wplist {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
   }
 }
 
-.p-pagenation__list ul {
-  width: 100vw;
-  padding: 0 30px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
+.wp-pagenavi {
+  width: 100%;
+  font-size: 15px;
+  margin: 40px 0 0 0;
+  padding: 20px 0 20px 0;
+  text-align: left;
+  display: table;
 }
 @media screen and (min-width: 600px) {
-  .p-pagenation__list ul {
+  .wp-pagenavi {
     width: 100%;
-    padding: 30px;
+    text-align: center;
+    display: inline-block;
   }
 }
-.p-pagenation__list ul .p-pagenation__btn {
-  display: inline;
-  list-style: none;
-  padding: 5px 10px;
-}
-.p-pagenation__list ul .p-pagenation__number {
-  display: block;
-  list-style: none;
-  padding: 5px 10px;
-  border: 1px #ccc solid;
+
+.pages {
+  display: inline-block;
   display: none;
+}
+@media screen and (min-width: 600px) {
+  .pages {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+.previouspostslink {
+  display: inline-block;
+  color: #3C2A10;
+  font-size: 25px;
+  padding: 0;
   cursor: pointer;
 }
-.p-pagenation__list ul .p-pagenation__number:active {
+@media screen and (min-width: 600px) {
+  .previouspostslink {
+    display: inline-block;
+    padding: 0 0 0 25px;
+  }
+}
+.previouspostslink span {
+  display: inline-block;
+  font-size: 20px;
+}
+@media screen and (min-width: 600px) {
+  .previouspostslink span {
+    display: none;
+    margin-left: 25px;
+  }
+}
+
+.current, .page {
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border: 1px #ccc solid;
+  cursor: pointer;
+  display: none;
+}
+.current:active, .page:active {
   background-color: #3C2B1C;
   color: #fff;
 }
 @media screen and (min-width: 600px) {
-  .p-pagenation__list ul .p-pagenation__number {
-    display: block;
-    margin: 0 5px;
+  .current, .page {
+    display: inline-block;
+  }
+}
+
+.nextpostslink {
+  margin: 0 0 0 auto;
+  display: table-cell;
+  text-align: right;
+  color: #3C2A10;
+  font-size: 25px;
+  cursor: pointer;
+}
+@media screen and (min-width: 600px) {
+  .nextpostslink {
+    display: inline-block;
+    padding: 0 0 0 25px;
+    margin: 0;
+  }
+}
+.nextpostslink span {
+  font-size: 20px;
+  display: inline-block;
+}
+@media screen and (min-width: 600px) {
+  .nextpostslink span {
+    display: none;
   }
 }
 
@@ -1601,6 +1748,7 @@ body {
   background-color: #F2EDE9;
   z-index: 1001;
   transition: all 0.6s;
+  padding-bottom: 50px;
   /* サイドバータブレットの場合 */
   /* サイドバーPCの場合 */
   /* サイドバーのリスト部分 */
@@ -1634,6 +1782,17 @@ body {
   list-style: none;
   font-size: 20px;
   line-height: 60px;
+}
+
+.p-sidebar__category a {
+  /* wordpress用の調整！！！ */
+  font-size: 20px;
+  color: #707070;
+}
+
+.menu-item-type-taxonomy > a {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 /* Menu クリックで左からサイドバー出現 */
@@ -1775,12 +1934,10 @@ body {
   width: 100vw;
   height: 60vw;
   line-height: 60vw;
-  background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
 }
 @media screen and (min-width: 1025px) {
   .c-contents__single {
-    background-image: url("../img/cheezburger_fot_pcheader.jpg");
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
     line-height: calc((100vw - 300px) * 0.33);
@@ -1793,12 +1950,10 @@ body {
   width: 100vw;
   height: 60vw;
   line-height: 60vw;
-  background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
 }
 @media screen and (min-width: 1025px) {
   .c-contents__single {
-    background-image: url("../img/cheezburger_fot_pcheader.jpg");
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
     line-height: calc((100vw - 300px) * 0.33);
@@ -1841,5 +1996,35 @@ body {
   font-size: 45px;
   padding-left: 25px;
   color: #ffffff;
+}
+
+/* --------------------------------------------------------------
+    WordPress 詳細ページの css 調整
+  ---------------------------------------------------------------*/
+.wp-block-media-text {
+  margin: 25px 0;
+}
+
+figure.wp-block-image {
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  figure.wp-block-image {
+    width: 50%;
+  }
+}
+.wp-block-table table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 30px 0;
+  border: 1px solid #000;
+}
+.wp-block-table table tr td {
+  padding: 20px;
+  border: 1px solid #000;
+}
+
+.wp-search__list ul {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

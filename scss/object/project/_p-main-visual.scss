@@ -212,6 +212,20 @@
   }
 }
 
+.p-burgerlist__archive img {                          /* wordpress吐き出し対応にした!!! */
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  width: 100%;
+  height: auto;
+  @include base.mq(tb) {                  // @media screen and (min-width: 600px)
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
 .p-burgerlist__text__archive {
   grid-column: 1 / 2;
   grid-row: 2 / 3;

@@ -40,13 +40,13 @@
 
 /* サイドバーの上部の✖️のcss */
 .c-sidebar__icon {
-  margin: 15px 15px 0 calc((100vw * 0.875) - 65px);          // 15px 15px 0 auto から変更（右に寄りすぎるので）
+  margin: 50px 15px 0 calc((100vw * 0.875) - 65px);          // 15px 15px 0 auto から変更（右に寄りすぎるので）  wordpress表示の関係で上を50pxにした
   width: 50px;
   height: 50px;
   box-sizing: border-box;
   position: relative;
   @include base.mq(tb) {                                      // @media screen and (min-width: 600px)
-    margin: 15px 15px 0 calc((100vw * 0.45) - 65px);
+    margin: 25px 15px 0 calc((100vw * 0.45) - 65px);         // wordpress表示の関係で上を25pxにした
     @include base.mq(pc) {                                    // @media screen and (min-width:1025px)
       display: none;
     }

@@ -22,6 +22,7 @@
     archiveページ 
 ----------------------------*/
 /* ページネーション */
+/*
 .p-pagenation {
   display: flex;
   justify-content: center;
@@ -69,7 +70,109 @@
       }
     }
   }
+}*/
+
+/*-----------------------------------------------
+   WordPress用のページネーションの調整
+  -----------------------------------------------*/
+
+.p-pagenation__wplist {
+  margin: 0 25px 0 25px;
+  width: 90%;
+  text-align: right;
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }  
 }
+
+.wp-pagenavi {
+  width: 100%;
+  font-size: 15px;
+  margin: 40px 0 0 0;
+  padding: 20px 0 20px 0;
+  text-align: left;
+  display: table;
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+.pages {
+  display: inline-block;
+  display: none;  
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+.previouspostslink {
+  display: inline-block;
+  color: #3C2A10;
+  font-size: 25px;
+  padding: 0;
+  cursor: pointer;
+
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    display: inline-block;
+    padding: 0 0 0 25px;
+  }
+  span {
+    display: inline-block;  
+    font-size: 20px;
+    @include base.mq(tb) {            // @media screen and (min-width: 600px)
+      display: none;
+      margin-left: 25px;
+    }
+  }
+}
+
+.current, .page {
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border: 1px #ccc solid;
+  cursor: pointer;
+  &:active {
+    background-color: #3C2B1C;
+    color: #fff;
+  }
+  display: none;  
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    display: inline-block;
+  }
+}
+
+.nextpostslink {
+  margin: 0 0 0 auto;
+  display: table-cell;
+  text-align: right;
+  color: #3C2A10;
+  font-size: 25px;
+  cursor: pointer;
+  @include base.mq(tb) {            // @media screen and (min-width: 600px)
+    display: inline-block;
+    padding: 0 0 0 25px;
+    margin: 0;
+  }
+  span {
+    font-size: 20px;
+    display: inline-block;  
+    @include base.mq(tb) {            // @media screen and (min-width: 600px)
+      display: none;
+    }
+  }
+}
+
+
+
+
 
 
 /* -----------------------

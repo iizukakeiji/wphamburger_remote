@@ -118,12 +118,12 @@
   width: 100vw;
   height: calc(100vw * 0.6);
   line-height: calc(100vw * 0.6);
-  background-image: url("../img/cheezburger_fot_header.jpg");
+//  background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
   @include base.mq(tb) {                                             // @media screen and (min-width: 600px)
   }
   @include base.mq(pc) {                                             // @media screen and (min-width: 1025px)
-    background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
+//    background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
     line-height: calc((100vw - 300px) * 0.33);
@@ -136,12 +136,12 @@
   width: 100vw;
   height: calc(100vw * 0.6);
   line-height: calc(100vw * 0.6);
-  background-image: url("../img/cheezburger_fot_header.jpg");
+//  background-image: url("../img/cheezburger_fot_header.jpg");
   background-size: cover;
   @include base.mq(tb) {                                             // @media screen and (min-width: 600px)
   }
   @include base.mq(pc) {                                             // @media screen and (min-width: 1025px)
-    background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
+//    background-image: url("../img/cheezburger_fot_pcheader.jpg");    //PC版は画像を入れ替え  
     width: calc(100vw - 300px);
     height: calc((100vw - 300px) * 0.33);
     line-height: calc((100vw - 300px) * 0.33);
@@ -191,3 +191,38 @@
     color: #ffffff;
   }
 }
+
+
+/* --------------------------------------------------------------
+    WordPress 詳細ページの css 調整
+  ---------------------------------------------------------------*/
+.wp-block-media-text {
+  margin: 25px 0;
+}
+
+figure.wp-block-image {
+  width: 100%;
+  @include base.mq(tb) {                                  // @media screen and (min-width: 600px)
+    width: 50%;
+  }
+  @include base.mq(pc) {                                  // @media screen and (min-width: 1025px)
+  }
+}
+
+
+// テーブル
+.wp-block-table table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 30px 0;
+  border: 1px solid #000;
+  tr td {
+    padding: 20px;
+    border: 1px solid #000;
+  }
+}
+
+.wp-search__list ul {
+  display: none;
+}
+
