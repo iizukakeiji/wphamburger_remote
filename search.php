@@ -9,37 +9,30 @@
     </article>
 
 <!-- 検索結果の表示 -->
-  <div class="wp-search__list">
+<div class="wp-search__list">  
     <?php if (have_posts()): ?>
-    <?php
-      if (isset($_GET['s']) && empty($_GET['s'])) {
-        echo '検索キーワード未入力'; // 検索キーワードが未入力の場合のテキストを指定
-      } else {
-        echo '“'.$_GET['s'] .'”の検索結果：'.$wp_query->found_posts .'件'; // 検索キーワードと該当件数を表示
-      }
-    ?>
     <ul>
       <?php while(have_posts()): the_post(); ?>
       <li>
   </div>
       <section class="p-burgerlist__archive">
-          <?php the_post_thumbnail(''); ?>
-        <div class="p-burgerlist__text__archive">
-          <h4><?php the_title(); ?></h4>
-          <h5><?php the_excerpt(); ?></h5>
-          <button type="submit" class="c-btn__archive"><a href="<?php the_permalink(); ?>">詳しく見る</a></button>
-        </div>  
-      </section>
-
-
-    </li>
+            <?php the_post_thumbnail(''); ?>
+          <div class="p-burgerlist__text__archive">
+            <h4><?php the_title(); ?></h4>
+            <h5><?php the_excerpt(); ?></h5>
+            <button type="submit" class="c-btn__archive"><a href="<?php the_permalink(); ?>">詳しく見る</a></button>
+          </div>  
+        </section>
+      </li>
       <?php endwhile; ?>
     </ul>
+
+
     <?php else: ?>
-      検索されたキーワードにマッチする記事はありませんでした
+      <div class="wp-search__nolist">キーワードにマッチする記事はありませんでした</div?
     <?php endif; ?>
 
-
+    <!-- 検索結果の表示 -->
     <!-- ページネーション -->
     <div class="p-pagenation">
       <div  class="p-pagenation__wplist">

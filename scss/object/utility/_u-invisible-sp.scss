@@ -226,3 +226,14 @@ figure.wp-block-image {
   display: none;
 }
 
+
+/*----------------------------------------------
+    WordPress アーカイブサーチの余白調整
+  ----------------------------------------------*/
+.wp-search__list {
+  margin-top: 35px;
+}
+
+.wp-search__nolist{
+  margin: 10px 0 0 20px;
+}
